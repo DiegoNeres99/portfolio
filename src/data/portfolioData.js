@@ -39,7 +39,7 @@ export const profile = {
     { label: "Especialidade", value: "Full Stack Web" },
     { label: "Disponibilidade", value: "Aberto a propostas" },
   ],
-  email: "diego@email.com",
+  email: "miottadiego@gmail.com",
   github: "https://github.com/",
   linkedin: "https://www.linkedin.com/",
   instagram: "https://www.instagram.com/diegoneres.dev/",
