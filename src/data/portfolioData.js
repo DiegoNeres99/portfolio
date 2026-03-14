@@ -42,6 +42,7 @@ export const profile = {
   email: "diego@email.com",
   github: "https://github.com/",
   linkedin: "https://www.linkedin.com/",
+  instagram: "https://www.instagram.com/diegoneres.dev/",
   //resumeFile: "/curriculo-diego-neres-miotta.pdf",
   whatsapp: "https://wa.me/5543984775641",
 };

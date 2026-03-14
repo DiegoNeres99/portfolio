@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import CustomCursor from "./components/CustomCursor";
 import Education from "./components/Education";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -42,7 +41,6 @@ function App() {
 
   return (
     <div className="relative overflow-x-hidden bg-bg text-textPrimary">
-      <CustomCursor />
       <Navbar activeSection={activeSection} />
       <main>
         <Hero />

@@ -52,3 +52,29 @@ body {
     display: none;
   }
 }
+
+.hero-game-panel {
+  backdrop-filter: blur(4px);
+}
+
+.hero-game-board {
+  margin-inline: auto;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 136, 0.12), transparent 45%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.hero-game-dot {
+  position: absolute;
+  border: 1px solid rgba(0, 255, 136, 0.9);
+  border-radius: 999px;
+  background: rgba(0, 255, 136, 0.16);
+  box-shadow: 0 0 0 5px rgba(0, 255, 136, 0.07), 0 0 18px rgba(0, 255, 136, 0.4);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.12s ease;
+}
+
+.hero-game-dot:hover {
+  transform: scale(1.14);
+  box-shadow: 0 0 0 7px rgba(0, 255, 136, 0.1), 0 0 22px rgba(0, 255, 136, 0.55);
+}

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { profile } from "../data/portfolioData";
 import { fadeUp, staggerContainer } from "../utils/animation";
+import HeroMiniGame from "./HeroMiniGame";
 
 function Hero() {
   const phrases = useMemo(
@@ -107,6 +108,14 @@ function Hero() {
             <FaLinkedin /> LinkedIn
           </a>
           <a
+            href={profile.instagram}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+          >
+            <FaInstagram /> Instagram
+          </a>
+          <a
             href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
           >
@@ -128,6 +137,7 @@ function Hero() {
             <FiDownload /> Baixar Curriculo
           </a>
         </motion.div>
+        <HeroMiniGame />
       </motion.div>
     </section>
   );
