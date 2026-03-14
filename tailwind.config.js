@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#050505",
-        surface: "#0d0d0d",
-        panel: "#121212",
-        border: "#242424",
-        accent: "#00FF88",
-        cyan: "#00D7FF",
-        textPrimary: "#f5f5f5",
-        textMuted: "#9ca3af",
+        bg: "rgb(var(--color-bg) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        panel: "rgb(var(--color-panel) / <alpha-value>)",
+        border: "rgb(var(--color-border) / <alpha-value>)",
+        accent: "rgb(var(--color-accent) / <alpha-value>)",
+        cyan: "rgb(var(--color-cyan) / <alpha-value>)",
+        textPrimary: "rgb(var(--color-text-primary) / <alpha-value>)",
+        textMuted: "rgb(var(--color-text-muted) / <alpha-value>)",
       },
       fontFamily: {
         display: ["Space Mono", "JetBrains Mono", "monospace"],
@@ -21,7 +21,7 @@ export default {
         glow: "0 0 24px rgba(0, 255, 136, 0.25)",
       },
       backgroundImage: {
-        grid: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+        grid: "linear-gradient(rgb(var(--color-grid-line) / 0.08) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--color-grid-line) / 0.08) 1px, transparent 1px)",
       },
     },
   },

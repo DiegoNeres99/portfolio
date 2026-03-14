@@ -135,19 +135,21 @@ export const projects = [
     demo: "#",
   },
   {
-    name: "Projeto 02 - [nome]",
+    name: "Projeto 02 - Em breve",
     description:
-      "[descricao] Dashboard com dados em tempo real, autenticacao e controle de permissao por perfil.",
-    techs: ["React", "PHP", "PostgreSQL"],
-    github: "https://github.com/",
+      "Projeto em desenvolvimento. Em breve publico detalhes tecnicos, repositorio e demonstracao.",
+    techs: ["Em definicao"],
+    github: "#",
     demo: "#",
+    comingSoon: true,
   },
   {
-    name: "Projeto 03 - [nome]",
+    name: "Projeto 03 - Em breve",
     description:
-      "[descricao] Plataforma web responsiva com API REST e deploy em ambiente Linux.",
-    techs: ["Angular", "Laravel", "GitLab CI"],
-    github: "https://github.com/",
+      "Novo case em preparacao. Em breve adiciono stack, imagens e links de acesso.",
+    techs: ["Em definicao"],
+    github: "#",
     demo: "#",
+    comingSoon: true,
   },
 ];

@@ -27,7 +27,14 @@ function Projects() {
               variants={fadeUp}
               className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6"
             >
-              <h3 className="font-display text-xl text-textPrimary">{project.name}</h3>
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="font-display text-xl text-textPrimary">{project.name}</h3>
+                {project.comingSoon ? (
+                  <span className="rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+                    Em breve
+                  </span>
+                ) : null}
+              </div>
               <p className="mt-3 text-sm leading-relaxed text-textMuted">{project.description}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
@@ -42,22 +49,35 @@ function Projects() {
               </div>
 
               <div className="mt-6 flex gap-2">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
-                >
-                  <FiGithub /> GitHub
-                </a>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
-                >
-                  <FiArrowUpRight /> Demo
-                </a>
+                {project.comingSoon ? (
+                  <>
+                    <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
+                      <FiGithub /> GitHub em breve
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
+                      <FiArrowUpRight /> Demo em breve
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                    >
+                      <FiGithub /> GitHub
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                    >
+                      <FiArrowUpRight /> Demo
+                    </a>
+                  </>
+                )}
               </div>
             </motion.article>
           ))}

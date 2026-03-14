@@ -11,8 +11,22 @@ import Skills from "./components/Skills";
 
 const sectionIds = ["home", "sobre", "servicos", "skills", "projetos", "formacao", "contato"];
 
+function getInitialTheme() {
+  if (typeof window === "undefined") {
+    return "dark";
+  }
+
+  const savedTheme = window.localStorage.getItem("theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
 function App() {
   const [activeSection, setActiveSection] = useState("home");
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,9 +53,20 @@ function App() {
     return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.body.setAttribute("data-theme", theme);
+    document.documentElement.style.colorScheme = theme;
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <div className="relative overflow-x-hidden bg-bg text-textPrimary">
-      <Navbar activeSection={activeSection} />
+      <Navbar
+        activeSection={activeSection}
+        theme={theme}
+        onToggleTheme={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
+      />
       <main>
         <Hero />
         <About />
