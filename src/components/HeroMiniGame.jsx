@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const BOARD_WIDTH = 520;
@@ -9,10 +9,10 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
-function randomPosition() {
+function randomPosition(width = BOARD_WIDTH, height = BOARD_HEIGHT) {
   return {
-    x: Math.random() * (BOARD_WIDTH - DOT_SIZE),
-    y: Math.random() * (BOARD_HEIGHT - DOT_SIZE),
+    x: Math.random() * Math.max(width - DOT_SIZE, 0),
+    y: Math.random() * Math.max(height - DOT_SIZE, 0),
   };
 }
 
@@ -26,16 +26,41 @@ function HeroMiniGame() {
   const [best, setBest] = useState(0);
   const [running, setRunning] = useState(false);
   const [message, setMessage] = useState("Clique no ponto para iniciar");
+  const [boardSize, setBoardSize] = useState({ width: BOARD_WIDTH, height: BOARD_HEIGHT });
 
   const lastTapRef = useRef(0);
+  const boardRef = useRef(null);
 
-  const boardStyle = useMemo(
-    () => ({
-      maxWidth: `${BOARD_WIDTH}px`,
-      height: `${BOARD_HEIGHT}px`,
-    }),
-    []
-  );
+  const boardStyle = {
+    maxWidth: `${BOARD_WIDTH}px`,
+    height: `${BOARD_HEIGHT}px`,
+  };
+
+  useEffect(() => {
+    const node = boardRef.current;
+    if (!node) return undefined;
+
+    const syncBoardSize = () => {
+      setBoardSize({
+        width: node.clientWidth,
+        height: node.clientHeight,
+      });
+    };
+
+    syncBoardSize();
+
+    const observer = new ResizeObserver(syncBoardSize);
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    setDot((prev) => ({
+      x: clamp(prev.x, 0, Math.max(boardSize.width - DOT_SIZE, 0)),
+      y: clamp(prev.y, 0, Math.max(boardSize.height - DOT_SIZE, 0)),
+    }));
+  }, [boardSize.width, boardSize.height]);
 
   useEffect(() => {
     if (!running) {
@@ -48,15 +73,17 @@ function HeroMiniGame() {
         let nextY = prev.y + velocity.y;
         let vx = velocity.x;
         let vy = velocity.y;
+        const maxX = Math.max(boardSize.width - DOT_SIZE, 0);
+        const maxY = Math.max(boardSize.height - DOT_SIZE, 0);
 
-        if (nextX <= 0 || nextX >= BOARD_WIDTH - DOT_SIZE) {
+        if (nextX <= 0 || nextX >= maxX) {
           vx *= -1;
-          nextX = clamp(nextX, 0, BOARD_WIDTH - DOT_SIZE);
+          nextX = clamp(nextX, 0, maxX);
         }
 
-        if (nextY <= 0 || nextY >= BOARD_HEIGHT - DOT_SIZE) {
+        if (nextY <= 0 || nextY >= maxY) {
           vy *= -1;
-          nextY = clamp(nextY, 0, BOARD_HEIGHT - DOT_SIZE);
+          nextY = clamp(nextY, 0, maxY);
         }
 
         if (vx !== velocity.x || vy !== velocity.y) {
@@ -68,7 +95,7 @@ function HeroMiniGame() {
     }, 16);
 
     return () => clearInterval(interval);
-  }, [running, velocity.x, velocity.y]);
+  }, [running, velocity.x, velocity.y, boardSize.height, boardSize.width]);
 
   const handleHit = () => {
     const now = Date.now();
@@ -92,14 +119,14 @@ function HeroMiniGame() {
       y: (prev.y > 0 ? 1 : -1) * Math.min(Math.abs(prev.y) + speedUp, 4.3),
     }));
 
-    setDot(randomPosition());
+    setDot(randomPosition(boardSize.width, boardSize.height));
   };
 
   const resetGame = () => {
     setScore(0);
     setRunning(false);
     setVelocity({ x: 1.6, y: 1.4 });
-    setDot(randomPosition());
+    setDot(randomPosition(boardSize.width, boardSize.height));
     setMessage("Clique no ponto para iniciar");
   };
 
@@ -120,6 +147,7 @@ function HeroMiniGame() {
         </div>
 
         <div
+          ref={boardRef}
           className="hero-game-board relative w-full overflow-hidden rounded-xl border border-white/10 bg-panel"
           style={boardStyle}
           role="application"
