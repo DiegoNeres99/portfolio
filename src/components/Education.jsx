@@ -16,11 +16,25 @@ function Education() {
         <SectionTitle
           eyebrow="Formacao"
           title="Linha do Tempo Academica"
-          subtitle="Evolucao academica focada em base solida para desenvolvimento web."
+          subtitle="Formacao e experiencia profissional com foco em desenvolvimento web."
         />
 
-        <motion.div variants={fadeUp} className="relative pl-6">
+        <motion.div variants={fadeUp} className="relative space-y-5 pl-6">
           <span className="absolute bottom-0 left-2 top-0 w-px bg-accent/40" />
+
+          <article className="relative rounded-2xl border border-border bg-surface p-5 md:p-6">
+            <span className="absolute left-[-1.2rem] top-7 h-3 w-3 rounded-full bg-accent shadow-glow" />
+            <p className="font-display text-sm uppercase tracking-[0.18em] text-cyan">
+              Atual
+            </p>
+            <h3 className="mt-2 font-display text-xl text-textPrimary">
+              Applicativa Technologies - Arapongas
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-textMuted">
+              Atuando como desenvolvedor Full Stack em projetos web, com foco em backend com Laravel
+              e NestJS e frontend com React.
+            </p>
+          </article>
 
           <article className="relative rounded-2xl border border-border bg-surface p-5 md:p-6">
             <span className="absolute left-[-1.2rem] top-7 h-3 w-3 rounded-full bg-accent shadow-glow" />

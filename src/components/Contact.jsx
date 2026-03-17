@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { profile } from "../data/portfolioData";
 import { fadeUp, staggerContainer } from "../utils/animation";
 import SectionTitle from "./SectionTitle";
@@ -128,14 +128,22 @@ function Contact() {
               >
                 <FaLinkedin /> LinkedIn
               </a>
-               <a
-                 href={profile.whatsapp}
-                 target="_blank"
-                 rel="noreferrer"
-                 className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-               >
-                 <FaWhatsapp /> WhatsApp
-               </a>
+              <a
+                href={profile.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+              >
+                <FaInstagram /> Instagram
+              </a>
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+              >
+                <FaWhatsapp /> WhatsApp
+              </a>
             </div>
           </motion.aside>
         </div>

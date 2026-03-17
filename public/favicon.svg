@@ -12,11 +12,11 @@
     dominant-baseline="middle"
     text-anchor="middle"
     font-family="Space Mono, monospace"
-    font-size="29"
+    font-size="38"
     font-weight="700"
     fill="#00ff88"
-    letter-spacing="1.2"
+    letter-spacing="0.4"
   >
-    DM
+    DN
   </text>
 </svg>
