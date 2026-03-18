@@ -4,6 +4,7 @@ import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 const links = [
   { id: "home", label: "Inicio" },
   { id: "sobre", label: "Sobre" },
+  { id: "servicos", label: "Servicos" },
   { id: "skills", label: "Skills" },
   { id: "projetos", label: "Projetos" },
   { id: "formacao", label: "Formacao" },
