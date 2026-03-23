@@ -11,10 +11,7 @@ function Footer() {
       <div className="section-shell space-y-3 text-center">
         <p className="text-xs uppercase tracking-[0.12em] text-textMuted">
           Diego Neres Miotta - Full Stack Developer
-        </p>
-        <p className="text-xs leading-relaxed text-textMuted">
-          Tambem encontrado como Diego Neres, Diego Miotta, {profile.instagramHandle}.
-        </p>
+        </p>        
         <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-textMuted">
           {hasInstagram ? (
             <a href={profile.instagram} target="_blank" rel="me noreferrer" className="hover:text-accent">
