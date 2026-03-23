@@ -4,9 +4,14 @@ import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react
 import { FiDownload } from "react-icons/fi";
 import { profile } from "../data/portfolioData";
 import { fadeUp, staggerContainer } from "../utils/animation";
+import { isValidSocialProfile } from "../utils/socialLinks";
 import HeroMiniGame from "./HeroMiniGame";
 
 function Hero() {
+  const hasGithub = isValidSocialProfile(profile.github, "github");
+  const hasLinkedin = isValidSocialProfile(profile.linkedin, "linkedin");
+  const hasInstagram = isValidSocialProfile(profile.instagram, "instagram");
+
   const phrases = useMemo(
     () => [
       "Full Stack Developer",
@@ -91,30 +96,39 @@ function Hero() {
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-3">
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-          >
-            <FaGithub /> GitHub
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-          >
-            <FaLinkedin /> LinkedIn
-          </a>
-          <a
-            href={profile.instagram}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-          >
-            <FaInstagram /> Instagram
-          </a>
+          {hasGithub ? (
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="me noreferrer"
+              aria-label="GitHub de Diego Neres Miotta"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+            >
+              <FaGithub /> GitHub
+            </a>
+          ) : null}
+          {hasLinkedin ? (
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="me noreferrer"
+              aria-label="LinkedIn de Diego Neres Miotta"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+            >
+              <FaLinkedin /> LinkedIn
+            </a>
+          ) : null}
+          {hasInstagram ? (
+            <a
+              href={profile.instagram}
+              target="_blank"
+              rel="me noreferrer"
+              aria-label="Instagram @diegoneres.dev"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+            >
+              <FaInstagram /> Instagram
+            </a>
+          ) : null}
           <a
             href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"

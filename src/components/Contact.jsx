@@ -3,9 +3,13 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { profile } from "../data/portfolioData";
 import { fadeUp, staggerContainer } from "../utils/animation";
+import { isValidSocialProfile } from "../utils/socialLinks";
 import SectionTitle from "./SectionTitle";
 
 function Contact() {
+  const hasGithub = isValidSocialProfile(profile.github, "github");
+  const hasLinkedin = isValidSocialProfile(profile.linkedin, "linkedin");
+  const hasInstagram = isValidSocialProfile(profile.instagram, "instagram");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const onChange = (event) => {
@@ -112,30 +116,36 @@ function Contact() {
               >
                 <FaEnvelope /> {profile.email}
               </a>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-              >
-                <FaGithub /> GitHub
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-              >
-                <FaLinkedin /> LinkedIn
-              </a>
-              <a
-                href={profile.instagram}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-              >
-                <FaInstagram /> Instagram
-              </a>
+              {hasGithub ? (
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="me noreferrer"
+                  className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+                >
+                  <FaGithub /> GitHub /DiegoNeres99
+                </a>
+              ) : null}
+              {hasLinkedin ? (
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="me noreferrer"
+                  className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+                >
+                  <FaLinkedin /> LinkedIn Diego Neres Miotta
+                </a>
+              ) : null}
+              {hasInstagram ? (
+                <a
+                  href={profile.instagram}
+                  target="_blank"
+                  rel="me noreferrer"
+                  className="flex items-center gap-2 rounded-lg border border-white/10 bg-panel px-4 py-3 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+                >
+                  <FaInstagram /> Instagram {profile.instagramHandle || "@diegoneres.dev"}
+                </a>
+              ) : null}
               <a
                 href={profile.whatsapp}
                 target="_blank"

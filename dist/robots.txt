@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: diegoneresdev.com.br
 Sitemap: https://diegoneresdev.com.br/sitemap.xml

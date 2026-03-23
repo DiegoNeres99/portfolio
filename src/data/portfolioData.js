@@ -40,10 +40,11 @@ export const profile = {
     { label: "Disponibilidade", value: "Aberto a propostas" },
   ],
   email: "miottadiego@gmail.com",
-  github: "https://github.com/",
+  github: "https://github.com/DiegoNeres99",
   linkedin: "https://www.linkedin.com/",
   instagram: "https://www.instagram.com/diegoneres.dev/",
-  //resumeFile: "/curriculo-diego-neres-miotta.pdf",
+  instagramHandle: "@diegoneres.dev",
+  resumeFile: "/curriculo-diego-neres-miotta.pdf",
   whatsapp: "https://wa.me/5543984775641",
 };
 
