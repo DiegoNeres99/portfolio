@@ -131,7 +131,7 @@ export const projects = [
     name: "Projeto 01 - Portfolio Desiree (privado)",
     description:
       "Site institucional em desenvolvimento privado, com tecnologias modernas e foco em performance.",
-    techs: ["React", "Vite", "TailwindCSS"],
+    techs: ["React", "Vite", "TailwindCSS", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_desiree",
     demo: "#",
   },
@@ -139,7 +139,7 @@ export const projects = [
     name: "Projeto 02 - Store Laravel (em breve)",
     description:
       "Projeto em desenvolvimento. Em breve publico detalhes tecnicos, repositorio e demonstracao.",
-    techs: ["Em definicao"],
+    techs: ["Php", "Laravel", "MySQL"],
     github: "https://github.com/DiegoNeres99/laravel_store",
     demo: "#",
     comingSoon: true,
