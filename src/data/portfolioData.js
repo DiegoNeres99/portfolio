@@ -128,7 +128,7 @@ export const services = [
 
 export const projects = [
   {
-    name: "Projeto 01 - Site Desiree (privado)",
+    name: "Projeto 01 - Portfolio Desiree (privado)",
     description:
       "Site institucional em desenvolvimento privado, com tecnologias modernas e foco em performance.",
     techs: ["React", "Vite", "TailwindCSS"],
@@ -136,11 +136,11 @@ export const projects = [
     demo: "#",
   },
   {
-    name: "Projeto 02 - Em breve",
+    name: "Projeto 02 - Store Laravel (em breve)",
     description:
       "Projeto em desenvolvimento. Em breve publico detalhes tecnicos, repositorio e demonstracao.",
     techs: ["Em definicao"],
-    github: "#",
+    github: "https://github.com/DiegoNeres99/laravel_store",
     demo: "#",
     comingSoon: true,
   },

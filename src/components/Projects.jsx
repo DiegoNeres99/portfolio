@@ -5,6 +5,8 @@ import { fadeUp, staggerContainer } from "../utils/animation";
 import SectionTitle from "./SectionTitle";
 
 function Projects() {
+  const hasValidLink = (url) => Boolean(url && url !== "#");
+
   return (
     <section id="projetos" data-section className="border-b border-white/5 py-20 md:py-28">
       <motion.div
@@ -21,9 +23,9 @@ function Projects() {
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.article
-              key={project.name}
+              key={`${project.name}-${index}`}
               variants={fadeUp}
               className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6"
             >
@@ -38,7 +40,7 @@ function Projects() {
               <p className="mt-3 text-sm leading-relaxed text-textMuted">{project.description}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.techs.map((tech) => (
+                {(project.techs ?? []).map((tech) => (
                   <span
                     key={tech}
                     className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs text-accent"
@@ -49,34 +51,34 @@ function Projects() {
               </div>
 
               <div className="mt-6 flex gap-2">
-                {project.comingSoon ? (
-                  <>
-                    <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
-                      <FiGithub /> GitHub em breve
-                    </span>
-                    <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
-                      <FiArrowUpRight /> Demo em breve
-                    </span>
-                  </>
+                {hasValidLink(project.github) ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                  >
+                    <FiGithub /> GitHub
+                  </a>
                 ) : (
-                  <>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
-                    >
-                      <FiGithub /> GitHub
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
-                    >
-                      <FiArrowUpRight /> Demo
-                    </a>
-                  </>
+                  <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
+                    <FiGithub /> GitHub em breve
+                  </span>
+                )}
+
+                {hasValidLink(project.demo) ? (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                  >
+                    <FiArrowUpRight /> Demo
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
+                    <FiArrowUpRight /> Demo em breve
+                  </span>
                 )}
               </div>
             </motion.article>
