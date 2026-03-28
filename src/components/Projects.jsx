@@ -73,7 +73,7 @@ function Projects() {
                     rel="noreferrer"
                     className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
                   >
-                    <FiArrowUpRight /> Demo
+                    <FiArrowUpRight /> Acesse
                   </a>
                 ) : (
                   <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">

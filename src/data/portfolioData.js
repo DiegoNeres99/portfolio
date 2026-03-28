@@ -133,7 +133,7 @@ export const projects = [
       "Site institucional em desenvolvimento privado, com tecnologias modernas e foco em performance.",
     techs: ["React", "Vite", "TailwindCSS", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_desiree",
-    demo: "#",
+    demo: "https://www.desireehonorio.com.br/",
   },
   {
     name: "Projeto 02 - Store Laravel (em breve)",
