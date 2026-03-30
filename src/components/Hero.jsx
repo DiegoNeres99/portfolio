@@ -143,13 +143,13 @@ function Hero() {
           >
             <FaWhatsapp /> WhatsApp
           </a>
-          <a
+          {/* <a
             href={profile.resumeFile}
             download
             className="inline-flex items-center gap-2 rounded-lg border border-accent bg-accent/10 px-4 py-2 text-sm text-accent transition hover:shadow-glow"
           >
             <FiDownload /> Baixar Curriculo
-          </a>
+          </a> */}
         </motion.div>
         <HeroMiniGame />
       </motion.div>
