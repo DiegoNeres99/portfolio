@@ -145,9 +145,9 @@ export const projects = [
     comingSoon: true,
   },
   {
-    name: "Projeto 03 - Em breve",
+    name: "Projeto 03 - Clinic plataform WhatsApp (em breve)",
     description:
-      "Novo case em preparacao. Em breve adiciono stack, imagens e links de acesso.",
+      "Novo case em preparacao. Em breve adiciono stack e links de acesso.",
     techs: ["Em definicao"],
     github: "#",
     demo: "#",
