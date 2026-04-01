@@ -145,12 +145,21 @@ export const projects = [
     comingSoon: true,
   },
   {
-    name: "Projeto 03 - Clinic plataform WhatsApp (em breve)",
+    name: "Projeto 03 - Clinic plataform WhatsApp (privado)",
     description:
-      "Novo case em preparacao. Em breve adiciono stack e links de acesso.",
+      "Em preparacao. Em breve adiciono stack e links de acesso.",
     techs: ["Em definicao"],
     github: "#",
     demo: "#",
     comingSoon: true,
   },
+  {
+    name: "Projeto 04 - Portfolio Silmara (privado)",
+    description:
+      "Em preparacao. Em breve adiciono stack e links de acesso.",
+    techs: ["React", "Vite", "JavaScript"],
+    github: "https://github.com/DiegoNeres99/site_silmara",
+    demo: "#",
+    comingSoon: true,
+  }
 ];
