@@ -128,7 +128,7 @@ export const services = [
 
 export const projects = [
   {
-    name: "Projeto 01 - Portfolio Desiree (privado)",
+    name: "Projeto 01 - landing page Desiree (publico)",
     description:
       "Site institucional em desenvolvimento privado, com tecnologias modernas e foco em performance.",
     techs: ["React", "Vite", "TailwindCSS", "JavaScript"],
@@ -144,22 +144,22 @@ export const projects = [
     demo: "#",
     comingSoon: true,
   },
+  // {
+  //   name: "Projeto 03 - Clinic plataform WhatsApp (privado)",
+  //   description:
+  //     "Em preparacao. Em breve adiciono stack e links de acesso.",
+  //   techs: ["Em definicao"],
+  //   github: "#",
+  //   demo: "#",
+  //   comingSoon: true,
+  // },
   {
-    name: "Projeto 03 - Clinic plataform WhatsApp (privado)",
-    description:
-      "Em preparacao. Em breve adiciono stack e links de acesso.",
-    techs: ["Em definicao"],
-    github: "#",
-    demo: "#",
-    comingSoon: true,
-  },
-  {
-    name: "Projeto 04 - Portfolio Silmara (privado)",
+    name: "Projeto 03 - landing page Silmara (publico)",
     description:
       "Em preparacao. Em breve adiciono stack e links de acesso.",
     techs: ["React", "Vite", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_silmara",
-    demo: "#",
+    demo: "https://silmaraalmeidaterapia.com.br/",
     comingSoon: true,
   }
 ];
