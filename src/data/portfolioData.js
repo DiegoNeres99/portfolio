@@ -136,11 +136,11 @@ export const projects = [
     demo: "https://www.desireehonorio.com.br/",
   },
   {
-    name: "Projeto 02 - Store Laravel (em breve)",
+    name: "Projeto 02 - Store em Flutter (em breve)",
     description:
       "Projeto em desenvolvimento. Em breve publico detalhes tecnicos, repositorio e demonstracao.",
-    techs: ["Php", "Laravel", "MySQL"],
-    github: "https://github.com/DiegoNeres99/laravel_store",
+    techs: ["Flutter", "Dart", "Firebase"],
+    github: "https://github.com/DiegoNeres99/primeiro-projeto-em-flutter",
     demo: "#",
     comingSoon: true,
   },
