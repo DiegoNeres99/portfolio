@@ -29,15 +29,15 @@ function Projects() {
               variants={fadeUp}
               className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6"
             >
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="font-display text-xl text-textPrimary">{project.name}</h3>
+              <div className="flex min-h-[3.5rem] items-start justify-between gap-3">
+                <h3 className="font-display text-lg leading-snug text-textPrimary">{project.name}</h3>
                 {project.comingSoon ? (
-                  <span className="rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+                  <span className="mt-0.5 shrink-0 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
                     Em breve
                   </span>
                 ) : null}
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-textMuted">{project.description}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-textMuted">{project.description}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {(project.techs ?? []).map((tech) => (
@@ -50,7 +50,7 @@ function Projects() {
                 ))}
               </div>
 
-              <div className="mt-6 flex gap-2">
+              <div className="mt-5 flex gap-2">
                 {hasValidLink(project.github) ? (
                   <a
                     href={project.github}

@@ -41,10 +41,10 @@ export const profile = {
   ],
   email: "miottadiego@gmail.com",
   github: "https://github.com/DiegoNeres99",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/diego-neres-285906184/",
   instagram: "https://www.instagram.com/diegoneres.dev/",
   instagramHandle: "@diegoneres.dev",
-  resumeFile: "/curriculo-diego-neres-miotta.pdf",
+  // resumeFile: "/curriculo-diego-neres-miotta.pdf",
   whatsapp: "https://wa.me/5543984775641",
 };
 
@@ -128,9 +128,9 @@ export const services = [
 
 export const projects = [
   {
-    name: "Projeto 01 - landing page Desiree (publico)",
+    name: "Projeto 01 - Landing page Desiree (publico)",
     description:
-      "Site institucional em desenvolvimento privado, com tecnologias modernas e foco em performance.",
+      "Projeto finalizado e disponível, com acesso liberado",
     techs: ["React", "Vite", "TailwindCSS", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_desiree",
     demo: "https://www.desireehonorio.com.br/",
@@ -138,28 +138,28 @@ export const projects = [
   {
     name: "Projeto 02 - Store em Flutter (em breve)",
     description:
-      "Projeto em desenvolvimento. Em breve publico detalhes tecnicos, repositorio e demonstracao.",
+      "Projeto em desenvolvimento, com progresso ativo.",
     techs: ["Flutter", "Dart", "Firebase"],
     github: "https://github.com/DiegoNeres99/primeiro-projeto-em-flutter",
     demo: "#",
     comingSoon: true,
-  },
-  // {
-  //   name: "Projeto 03 - Clinic plataform WhatsApp (privado)",
-  //   description:
-  //     "Em preparacao. Em breve adiciono stack e links de acesso.",
-  //   techs: ["Em definicao"],
-  //   github: "#",
-  //   demo: "#",
-  //   comingSoon: true,
-  // },
+  },  
   {
-    name: "Projeto 03 - landing page Silmara (publico)",
+    name: "Projeto 03 - Landing page Silmara (publico)",
     description:
-      "Em preparacao. Em breve adiciono stack e links de acesso.",
+      "Projeto finalizado e disponível, com acesso liberado.",
     techs: ["React", "Vite", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_silmara",
     demo: "https://silmaraalmeidaterapia.com.br/",
     comingSoon: true,
-  }
+  },
+  {
+    name: "Projeto 04 - Rastreador veicular em tempo real (publico)",
+    description:
+      "Projeto em desenvolvimento, com progresso ativo.",
+    techs: ["React", "NestJs", "TypeScript", "WebSocket", "MySQL"],
+    github: "https://github.com/DiegoNeres99/projeto_rastreador_veiculo",
+    demo: "#",
+    comingSoon: true,
+  },
 ];
