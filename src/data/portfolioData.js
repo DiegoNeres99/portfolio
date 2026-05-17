@@ -45,7 +45,7 @@ export const profile = {
   instagram: "https://www.instagram.com/diegoneres.dev/",
   instagramHandle: "@diegoneres.dev",
   // resumeFile: "/curriculo-diego-neres-miotta.pdf",
-  whatsapp: "https://wa.me/5543984775641",
+  whatsapp: "https://wa.me/5543984098118",
 };
 
 export const skills = [
@@ -162,4 +162,13 @@ export const projects = [
     demo: "#",
     comingSoon: true,
   },
+  {
+    name: "Projeto 05 - Landing page Dr Adriana (publico)",
+    description:
+      "Projeto finalizado e disponível, com acesso liberado.",
+    techs: ["React", "Vite", "JavaScript"],
+    github: "https://github.com/DiegoNeres99/site_adriana",
+    demo: "https://adrianateodoro.com.br/",
+    comingSoon: true,
+  }
 ];
