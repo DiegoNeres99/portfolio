@@ -8,61 +8,95 @@ function Projects() {
   const hasValidLink = (url) => Boolean(url && url !== "#");
 
   return (
-    <section id="projetos" data-section className="border-b border-white/5 py-20 md:py-28">
+    <section id="projetos" data-section className="border-b border-white/5 py-28 md:py-36">
       <motion.div
         className="section-shell"
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.12 }}
       >
         <SectionTitle
           eyebrow="Projetos"
-          title="Projetos em Destaque"
-          subtitle="Cards de projetos com descricao curta, tecnologias e links para codigo/demo."
+          title="Trabalhos em Destaque"
+          subtitle="Cada projeto com contexto real — o problema que existia, o que foi construído e qual o resultado."
         />
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
               key={`${project.name}-${index}`}
               variants={fadeUp}
-              className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6"
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-colors duration-300 hover:border-accent/30"
             >
-              <div className="flex min-h-[3.5rem] items-start justify-between gap-3">
-                <h3 className="font-display text-lg leading-snug text-textPrimary">{project.name}</h3>
+              {/* Cabeçalho */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="space-y-1">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-accent/60">
+                    {project.category}
+                  </p>
+                  <h3 className="font-display text-lg font-bold leading-snug text-textPrimary group-hover:text-accent transition-colors duration-200">
+                    {project.name}
+                  </h3>
+                </div>
                 {project.comingSoon ? (
-                  <span className="mt-0.5 shrink-0 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+                  <span className="mt-0.5 shrink-0 rounded-full border border-accent/30 bg-accent/8 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-accent/70">
                     Em breve
                   </span>
                 ) : null}
               </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-textMuted">{project.description}</p>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              {/* Contexto — o problema */}
+              <div className="mt-5 flex gap-3">
+                <span className="mt-0.5 shrink-0 font-mono text-[9px] uppercase tracking-[0.15em] text-textMuted">
+                  Contexto
+                </span>
+                <p className="text-sm leading-relaxed text-textMuted">{project.context}</p>
+              </div>
+
+              {/* Solução */}
+              <div className="mt-3 flex gap-3">
+                <span className="mt-0.5 shrink-0 font-mono text-[9px] uppercase tracking-[0.15em] text-textMuted">
+                  Solução
+                </span>
+                <p className="flex-1 text-sm leading-relaxed text-textMuted">{project.description}</p>
+              </div>
+
+              {/* Resultado */}
+              <div className="mt-3 flex gap-3">
+                <span className="mt-0.5 shrink-0 font-mono text-[9px] uppercase tracking-[0.15em] text-accent/70">
+                  Resultado
+                </span>
+                <p className="text-sm leading-relaxed text-textPrimary">{project.result}</p>
+              </div>
+
+              {/* Stack */}
+              <div className="mt-5 flex flex-wrap gap-2">
                 {(project.techs ?? []).map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs text-accent"
+                    className="rounded-md border border-accent/20 bg-accent/8 px-2.5 py-1 text-[11px] text-accent/80"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-5 flex gap-2">
+              {/* Links */}
+              <div className="mt-6 flex gap-2">
                 {hasValidLink(project.github) ? (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-panel px-3.5 py-2 text-xs text-textMuted transition hover:border-accent/40 hover:text-accent"
                   >
-                    <FiGithub /> GitHub
+                    <FiGithub size={13} /> Código
                   </a>
                 ) : (
-                  <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
-                    <FiGithub /> GitHub em breve
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3.5 py-2 text-xs text-textMuted/50">
+                    <FiGithub size={13} /> Em breve
                   </span>
                 )}
 
@@ -71,13 +105,13 @@ function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/10 px-3.5 py-2 text-xs text-accent transition hover:bg-accent/15"
                   >
-                    <FiArrowUpRight /> Acesse
+                    <FiArrowUpRight size={13} /> Ver site
                   </a>
                 ) : (
-                  <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
-                    <FiArrowUpRight /> Demo em breve
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3.5 py-2 text-xs text-textMuted/50">
+                    <FiArrowUpRight size={13} /> Demo em breve
                   </span>
                 )}
               </div>

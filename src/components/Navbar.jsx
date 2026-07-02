@@ -20,9 +20,9 @@ function Navbar({ activeSection, theme, onToggleTheme }) {
       <nav className="section-shell flex h-16 items-center justify-between">
         <a
           href="#home"
-          className="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent"
+          className="font-display text-lg font-bold text-textPrimary hover:text-accent transition-colors"
         >
-          DNM
+          DNM<span className="text-accent">.</span>
         </a>
 
         <div className="flex items-center gap-3">
