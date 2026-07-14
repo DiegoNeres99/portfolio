@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { FiDownload } from "react-icons/fi";
 import { profile } from "../data/portfolioData";
 import { fadeUp, staggerContainer } from "../utils/animation";
 import { isValidSocialProfile } from "../utils/socialLinks";
+import DockerEbookBanner from "./DockerEbookBanner";
 import HeroMiniGame from "./HeroMiniGame";
 
 function Hero() {
@@ -70,87 +70,86 @@ function Hero() {
         viewport={{ once: true, amount: 0.3 }}
         className="section-shell w-full"
       >
-        <motion.p
-          variants={fadeUp}
-          className="mb-4 font-display text-xs uppercase tracking-[0.35em] text-cyan"
-        >
-          Desenvolvedor Full Stack
-        </motion.p>
-        <motion.h1
-          variants={fadeUp}
-          className="max-w-4xl font-display text-4xl font-bold leading-tight text-textPrimary sm:text-5xl md:text-7xl"
-        >
-          Diego Neres Miotta
-        </motion.h1>
-        <motion.p
-          variants={fadeUp}
-          className="mt-5 h-8 max-w-3xl font-display text-lg text-accent sm:text-xl"
-        >
-          <span className="typing-caret pr-1">{text}</span>
-        </motion.p>
-        <motion.p
-          variants={fadeUp}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-textMuted md:text-lg"
-        >
-          {profile.bio}
-        </motion.p>
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)]">
+          <div>
+            <motion.p
+              variants={fadeUp}
+              className="mb-4 font-display text-xs uppercase tracking-[0.35em] text-cyan"
+            >
+              Desenvolvedor Full Stack
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="max-w-4xl font-display text-4xl font-bold leading-tight text-textPrimary sm:text-5xl md:text-7xl"
+            >
+              Diego Neres Miotta
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="mt-5 h-8 max-w-3xl font-display text-lg text-accent sm:text-xl"
+            >
+              <span className="typing-caret pr-1">{text}</span>
+            </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 max-w-2xl text-base leading-relaxed text-textMuted md:text-lg"
+            >
+              {profile.bio}
+            </motion.p>
 
-        <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-3">
-          {hasGithub ? (
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="me noreferrer"
-              aria-label="GitHub de Diego Neres Miotta"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-            >
-              <FaGithub /> GitHub
-            </a>
-          ) : null}
-          {hasLinkedin ? (
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="me noreferrer"
-              aria-label="LinkedIn de Diego Neres Miotta"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-            >
-              <FaLinkedin /> LinkedIn
-            </a>
-          ) : null}
-          {hasInstagram ? (
-            <a
-              href={profile.instagram}
-              target="_blank"
-              rel="me noreferrer"
-              aria-label="Instagram @diegoneres.dev"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-            >
-              <FaInstagram /> Instagram
-            </a>
-          ) : null}
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-          >
-            <FaEnvelope /> Email
-          </a>
-          <a
-            href={profile.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
-          >
-            <FaWhatsapp /> WhatsApp
-          </a>
-          {/* <a
-            href={profile.resumeFile}
-            download
-            className="inline-flex items-center gap-2 rounded-lg border border-accent bg-accent/10 px-4 py-2 text-sm text-accent transition hover:shadow-glow"
-          >
-            <FiDownload /> Baixar Curriculo
-          </a> */}
-        </motion.div>
+            <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-3">
+              {hasGithub ? (
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="me noreferrer"
+                  aria-label="GitHub de Diego Neres Miotta"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+                >
+                  <FaGithub /> GitHub
+                </a>
+              ) : null}
+              {hasLinkedin ? (
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="me noreferrer"
+                  aria-label="LinkedIn de Diego Neres Miotta"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+                >
+                  <FaLinkedin /> LinkedIn
+                </a>
+              ) : null}
+              {hasInstagram ? (
+                <a
+                  href={profile.instagram}
+                  target="_blank"
+                  rel="me noreferrer"
+                  aria-label="Instagram @diegoneres.dev"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+                >
+                  <FaInstagram /> Instagram
+                </a>
+              ) : null}
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+              >
+                <FaEnvelope /> Email
+              </a>
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-panel px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+              >
+                <FaWhatsapp /> WhatsApp
+              </a>
+            </motion.div>
+          </div>
+
+          <DockerEbookBanner />
+        </div>
         <HeroMiniGame />
       </motion.div>
     </section>
