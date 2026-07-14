@@ -1,23 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#111111" />
+      <stop offset="0%" stop-color="#0f0f0f" />
       <stop offset="100%" stop-color="#050505" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="url(#bg)" />
-  <!-- Borda sutil âmbar -->
-  <rect width="64" height="64" rx="14" fill="none" stroke="#E8D5B0" stroke-width="2" stroke-opacity="0.25" />
+  <rect width="64" height="64" rx="12" fill="url(#bg)" />
   <text
     x="50%"
-    y="52%"
+    y="50%"
     dominant-baseline="middle"
     text-anchor="middle"
-    font-family="Georgia, serif"
-    font-size="30"
+    font-family="Space Mono, monospace"
+    font-size="38"
     font-weight="700"
-    fill="#E8D5B0"
-    letter-spacing="-0.5"
+    fill="#00ff88"
+    letter-spacing="0.4"
   >
     DN
   </text>

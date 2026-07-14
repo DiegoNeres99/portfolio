@@ -3,8 +3,8 @@ import { fadeUp } from "../utils/animation";
 
 function SectionTitle({ eyebrow, title, subtitle }) {
   return (
-    <motion.div variants={fadeUp} className="mb-12">
-      <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent/70">
+    <motion.div variants={fadeUp} className="mb-10">
+      <span className="font-display text-xs uppercase tracking-[0.25em] text-accent">
         {eyebrow}
       </span>
       <h2 className="mt-3 font-display text-3xl font-bold text-textPrimary md:text-4xl">
