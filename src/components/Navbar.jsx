@@ -43,7 +43,7 @@ function Navbar({ activeSection, theme, onToggleTheme }) {
             ))}
           </ul>
 
-          <button
+          {/* <button
             type="button"
             aria-label={themeLabel}
             title={themeLabel}
@@ -52,7 +52,7 @@ function Navbar({ activeSection, theme, onToggleTheme }) {
           >
             {theme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
             <span className="hidden md:inline">{themeLabel}</span>
-          </button>
+          </button> */}
 
           <button
             type="button"
