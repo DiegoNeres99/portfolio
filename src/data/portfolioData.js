@@ -3,6 +3,7 @@ import {
   FaApple,
   FaBrain,
   FaDatabase,
+  FaDocker,
   FaGithub,
   FaGitlab,
   FaHeadset,
@@ -57,6 +58,7 @@ export const skills = [
       { name: "JavaScript", icon: SiJavascript },
       { name: "React", icon: FaReact },
       { name: "Angular", icon: FaAngular },
+      { name: "Next.js", icon: FaReact },
     ],
   },
   {
@@ -65,7 +67,9 @@ export const skills = [
       { name: "PHP", icon: FaPhp },
       { name: "Laravel", icon: FaLaravel },
       { name: "Node.js", icon: SiNodedotjs },
-      { name: "NestJS", icon: SiNestjs },      
+      { name: "NestJS", icon: SiNestjs },  
+      { name: "TypeScript", icon: SiJavascript },
+      { name: "REST APIs", icon: FaServer },
     ],
   },
   {
@@ -74,6 +78,9 @@ export const skills = [
       { name: "MySQL", icon: SiMysql },
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "SQL Design", icon: FaDatabase },
+      { name: "Prisma ORM", icon: FaDatabase },
+      { name: "Supabase", icon: FaDatabase },
+      { name: "PgAdmin", icon: FaDatabase },
     ],
   },
   {
@@ -83,6 +90,8 @@ export const skills = [
       { name: "GitLab", icon: FaGitlab },
       { name: "Linux", icon: FaLinux },
       { name: "macOS (Apple)", icon: FaApple },
+      { name: "Docker", icon: FaDocker },
+      { name: "Cloudflare", icon: FaServer },
     ],
   },
 ];

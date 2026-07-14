@@ -23,7 +23,7 @@ function DockerEbookBanner() {
               Ebook
             </span>
             <h2 className="mt-4 font-display text-2xl font-bold leading-tight text-textPrimary">
-              Domine Docker sem enrolacao
+              Domine Docker sem enrolação
             </h2>
           </div>
 
@@ -33,7 +33,7 @@ function DockerEbookBanner() {
         </div>
 
         <p className="text-sm leading-relaxed text-textMuted">
-          Um guia direto para criar, gerenciar e publicar conteineres Docker com
+          Um guia direto para criar, gerenciar e publicar conteiners Docker com
           mais seguranca.
         </p>
 
