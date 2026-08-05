@@ -15,14 +15,14 @@ function About() {
       >
         <SectionTitle
           eyebrow="Sobre"
-          title="Perfil Tecnico"
-          subtitle="Construindo sistemas confiaveis do banco de dados a interface — com codigo limpo e foco em resultado."
+          title="Perfil Técnico"
+          subtitle="Combinação de desenvolvimento web, automação e segurança para entregar soluções mais sólidas e modernas."
         />
 
         {/* Texto + Destaques */}
         <motion.div
           variants={fadeUp}
-          className="rounded-2xl border border-border bg-surface p-6 md:p-8"
+          className="glass-card rounded-2xl p-6 md:p-8"
         >
           <div className="grid gap-8 md:grid-cols-2">
             {/* Paragrafos */}

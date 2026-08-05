@@ -15,9 +15,9 @@ function Hero() {
   const phrases = useMemo(
     () => [
       "Full Stack Developer",
+      "DevOps em evolução",
+      "Cloud Security · APIs · Infra",
       "React · Angular · Laravel · NestJS",
-      "Do banco de dados a interface",
-      "Codigo limpo, performance, resultado",
     ],
     []
   );
@@ -71,12 +71,12 @@ function Hero() {
         className="section-shell w-full"
       >
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)]">
-          <div>
+          <div className="hero-spotlight">
             <motion.p
               variants={fadeUp}
               className="mb-4 font-display text-xs uppercase tracking-[0.35em] text-cyan"
             >
-              Desenvolvedor Full Stack
+              {profile.role}
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -84,6 +84,20 @@ function Hero() {
             >
               Diego Neres Miotta
             </motion.h1>
+            <motion.div variants={fadeUp} className="mt-4 flex flex-wrap gap-2">
+              {[
+                "ADS",
+                "Pós em DevOps",
+                "Segurança na Nuvem",
+              ].map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"
+                >
+                  {badge}
+                </span>
+              ))}
+            </motion.div>
             <motion.p
               variants={fadeUp}
               className="mt-5 h-8 max-w-3xl font-display text-lg text-accent sm:text-xl"
@@ -146,9 +160,27 @@ function Hero() {
                 <FaWhatsapp /> WhatsApp
               </a>
             </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="mt-6 grid gap-3 sm:grid-cols-3"
+            >
+              {[
+                { label: "Stack", value: "React · Node · Laravel" },
+                { label: "Foco", value: "DevOps + Cloud" },
+                { label: "Perfil", value: "Produto + Infra" },
+              ].map((item) => (
+                <div key={item.label} className="glass-card rounded-2xl p-3">
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-textMuted">{item.label}</p>
+                  <p className="mt-1 text-sm font-semibold text-textPrimary">{item.value}</p>
+                </div>
+              ))}
+            </motion.div>
           </div>
 
-          <DockerEbookBanner />
+          <div className="glass-card rounded-[28px] p-2">
+            <DockerEbookBanner />
+          </div>
         </div>
         <HeroMiniGame />
       </motion.div>

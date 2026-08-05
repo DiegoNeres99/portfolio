@@ -16,7 +16,7 @@ function Skills() {
         <SectionTitle
           eyebrow="Skills"
           title="Tecnologias"
-          subtitle="Stack organizada por especialidade para acelerar entregas full stack."
+          subtitle="Stack organizada para desenvolvimento web, operação e segurança aplicada em projetos modernos."
         />
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -24,7 +24,7 @@ function Skills() {
             <motion.article
               key={group.category}
               variants={fadeUp}
-              className="rounded-2xl border border-border bg-surface p-5 md:p-6"
+              className="glass-card rounded-2xl p-5 md:p-6"
             >
               <h3 className="font-display text-lg text-textPrimary">{group.category}</h3>
               <div className="mt-4 grid grid-cols-2 gap-3">

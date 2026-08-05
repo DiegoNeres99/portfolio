@@ -27,13 +27,13 @@ function Projects() {
             <motion.article
               key={`${project.name}-${index}`}
               variants={fadeUp}
-              className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6"
+              className="glass-card flex h-full flex-col rounded-2xl p-6"
             >
               <div className="flex min-h-[3.5rem] items-start justify-between gap-3">
                 <h3 className="font-display text-lg leading-snug text-textPrimary">{project.name}</h3>
                 {project.comingSoon ? (
                   <span className="mt-0.5 shrink-0 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
-                    Em breve
+                    {project.status ?? "Em breve"}
                   </span>
                 ) : null}
               </div>
@@ -50,21 +50,26 @@ function Projects() {
                 ))}
               </div>
 
-              <div className="mt-5 flex gap-2">
-                {hasValidLink(project.github) ? (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
-                  >
-                    <FiGithub /> GitHub
-                  </a>
-                ) : (
+              <div className="mt-5 flex flex-wrap gap-2">
+                {(project.githubLinks ?? (hasValidLink(project.github) ? [{ label: "GitHub", url: project.github }] : [])).map(
+                  ({ label, url }) => (
+                    <a
+                      key={url}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textPrimary transition hover:border-accent hover:text-accent"
+                    >
+                      <FiGithub /> {label}
+                    </a>
+                  ),
+                )}
+
+                {!project.githubLinks && !hasValidLink(project.github) ? (
                   <span className="inline-flex items-center gap-1 rounded-md border border-white/10 px-3 py-2 text-xs text-textMuted opacity-70">
                     <FiGithub /> GitHub em breve
                   </span>
-                )}
+                ) : null}
 
                 {hasValidLink(project.demo) ? (
                   <a

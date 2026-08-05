@@ -45,7 +45,7 @@ function Contact() {
           <motion.form
             variants={fadeUp}
             onSubmit={onSubmit}
-            className="rounded-2xl border border-border bg-surface p-5 md:p-6"
+            className="glass-card rounded-2xl p-5 md:p-6"
           >
             <div className="space-y-4">
               <label className="block">
@@ -100,7 +100,7 @@ function Contact() {
 
           <motion.aside
             variants={fadeUp}
-            className="flex flex-col justify-between rounded-2xl border border-border bg-surface p-5 md:p-6"
+            className="glass-card flex flex-col justify-between rounded-2xl p-5 md:p-6"
           >
             <div>
               <h3 className="font-display text-xl text-textPrimary">Canais de contato</h3>

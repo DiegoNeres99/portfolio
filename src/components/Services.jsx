@@ -25,7 +25,7 @@ function Services() {
         <SectionTitle
           eyebrow="Serviços"
           title="O que eu faço"
-          subtitle="Soluções completas do backend ao frontend — com qualidade, performance e foco no resultado."
+          subtitle="Soluções completas de desenvolvimento, infraestrutura e segurança com foco em qualidade e performance."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -37,7 +37,7 @@ function Services() {
                 custom={i}
                 variants={cardVariants}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group rounded-2xl border border-white/8 bg-surface p-7 transition-colors duration-300 hover:border-white/20"
+                className="glass-card group rounded-2xl p-7 transition-colors duration-300 hover:border-white/20"
               >
                 {/* Ícone com gradiente */}
                 <div className="mb-6 inline-flex h-[72px] w-[72px] items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-cyan shadow-lg">

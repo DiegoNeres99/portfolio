@@ -2,6 +2,7 @@ import {
   FaAngular,
   FaApple,
   FaBrain,
+  FaCloud,
   FaDatabase,
   FaDocker,
   FaGithub,
@@ -9,35 +10,39 @@ import {
   FaHeadset,
   FaLaravel,
   FaLinux,
+  FaLock,
   FaPencilAlt,
   FaPhp,
   FaReact,
+  FaRocket,
   FaServer,
+  FaShieldAlt,
   FaTools,
 } from "react-icons/fa";
 import { SiJavascript, SiMysql, SiPostgresql, SiNestjs, SiNodedotjs, SiHtml5, SiCss } from "react-icons/si";
 
 export const profile = {
   name: "Diego Neres Miotta",
-  age: 26,
-  role: "Full Stack Developer",
-  city: "Arapongas, Parana, Brasil",
+  role: "Full Stack Developer · DevOps · Cloud Security",
+  city: "Arapongas, Paraná, Brasil",
   college: "Unopar Arapongas (Anhanguera)",
-  course: "Analise e Desenvolvimento de Sistemas",
+  course: "Análise e Desenvolvimento de Sistemas",
   educationPeriod: "2024 - 2026",
+  postGraduation: "Pós-graduação em andamento: Engenharia de DevOps e Segurança e Proteção de Dados na Nuvem",
   experience: "3+ anos",
-  availability: "Aberto a oportunidades",
-  bio: "Desenvolvedor Full Stack com foco em construir produtos completos — do design de banco de dados a interface final — com codigo limpo, escalavel e facil de manter.",
+  availability: "Disponível para projetos, freelas e oportunidades",
+  bio: "Desenvolvedor Full Stack com foco em interfaces modernas, APIs robustas, automação e arquitetura de software com boa performance, segurança e escalabilidade. Hoje também estou aprofundando DevOps e proteção de dados na nuvem para entregar soluções mais completas e confiáveis.",
   aboutParagraphs: [
-    "Tenho 26 anos e atuo como desenvolvedor Full Stack. Minha especialidade e construir solucoes web completas e bem estruturadas, desde a modelagem do banco de dados ate a entrega da interface ao usuario final. Trabalho com atencao a performance, organizacao de codigo e facilidade de manutencao — porque um sistema bom e aquele que cresce sem virar um caos.",
-    "No frontend, uso React e Angular para criar interfaces modernas e responsivas. No backend, trabalho com PHP/Laravel e Node.js/NestJS para APIs REST robustas e seguras. Tenho experiencia em ambientes Linux, versionamento com Git/GitHub/GitLab e fluxos de CI/CD, o que me permite atuar em todo o ciclo de vida de uma aplicacao.",
+    "Sou graduado em Análise e Desenvolvimento de Sistemas e atualmente estou expandindo minha atuação com uma pós-graduação em Engenharia de DevOps e Segurança e Proteção de Dados na Nuvem. Essa combinação me permite unir desenvolvimento, infraestrutura e segurança em uma visão mais completa do ciclo de vida de um produto.",
+    "Meu trabalho gira em torno de aplicações web bem estruturadas, com foco em React, Angular, Laravel, NestJS, bancos relacionais e entregas com boa performance. Além disso, procuro soluções que tenham clareza técnica, organização de código e bom pensamento para evolução com segurança e escalabilidade.",
+    "Em paralelo, sigo fortalecendo meu perfil com práticas de automação, CI/CD, containers, Linux e segurança aplicada à nuvem, porque gosto de pensar no produto como um conjunto inteiro — frontend, backend, dados e operação.",
   ],
   highlights: [
-    { label: "Experiencia", value: "3+ anos" },
-    { label: "Localizacao", value: "Arapongas, PR" },
-    { label: "Faculdade", value: "Unopar (Anhanguera)" },
-    { label: "Curso", value: "ADS — 2024 a 2026" },
+    { label: "Experiência", value: "3+ anos" },
+    { label: "Localização", value: "Arapongas, PR" },
+    { label: "Graduação", value: "ADS · 2024 a 2026" },
     { label: "Especialidade", value: "Full Stack Web" },
+    { label: "Foco atual", value: "DevOps + Cloud Security" },
     { label: "Disponibilidade", value: "Aberto a propostas" },
   ],
   email: "miottadiego@gmail.com",
@@ -45,7 +50,6 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/diego-neres-285906184/",
   instagram: "https://www.instagram.com/diegoneres.dev/",
   instagramHandle: "@diegoneres.dev",
-  // resumeFile: "/curriculo-diego-neres-miotta.pdf",
   whatsapp: "https://wa.me/5543984098118",
 };
 
@@ -67,7 +71,7 @@ export const skills = [
       { name: "PHP", icon: FaPhp },
       { name: "Laravel", icon: FaLaravel },
       { name: "Node.js", icon: SiNodedotjs },
-      { name: "NestJS", icon: SiNestjs },  
+      { name: "NestJS", icon: SiNestjs },
       { name: "TypeScript", icon: SiJavascript },
       { name: "REST APIs", icon: FaServer },
     ],
@@ -84,14 +88,16 @@ export const skills = [
     ],
   },
   {
-    category: "DevOps / Ferramentas",
+    category: "DevOps · Cloud · Segurança",
     items: [
       { name: "Git / GitHub", icon: FaGithub },
       { name: "GitLab", icon: FaGitlab },
       { name: "Linux", icon: FaLinux },
-      { name: "macOS (Apple)", icon: FaApple },
       { name: "Docker", icon: FaDocker },
-      { name: "Cloudflare", icon: FaServer },
+      { name: "Nuvem", icon: FaCloud },
+      { name: "Segurança", icon: FaShieldAlt },
+      { name: "CI/CD", icon: FaRocket },
+      { name: "Proteção de dados", icon: FaLock },
     ],
   },
 ];
@@ -101,83 +107,96 @@ export const services = [
     icon: FaPencilAlt,
     title: "Desenvolvimento Frontend",
     description:
-      "Criação de interfaces modernas, responsivas e intuitivas usando React, Angular, HTML5 e CSS3 com foco em experiência do usuário.",
+      "Criação de interfaces modernas, responsivas e com foco em experiência de usuário, usando React, Angular, HTML5 e CSS3.",
   },
   {
     icon: FaServer,
     title: "Desenvolvimento Backend",
     description:
-      "Construção de APIs robustas e escaláveis com NestJS e TypeScript, com padrões arquiteturais modernos e segurança em primeiro lugar.",
+      "Construção de APIs robustas, organizadas e seguras com Laravel, NestJS e TypeScript, com arquitetura pensada para evoluir.",
   },
   {
     icon: FaDatabase,
-    title: "Banco de Dados",
+    title: "Banco de Dados & Integridade",
     description:
-      "Design e otimização de bancos de dados relacionais (MySQL), (PostgreSQL) e SQL Design com foco em performance e integridade dos dados.",
+      "Modelagem, otimização e manutenção de bancos relacionais com foco em performance, integridade e consistência dos dados.",
   },
   {
-    icon: FaTools,
-    title: "Manutenção de Computadores",
+    icon: FaRocket,
+    title: "DevOps & Automação",
     description:
-      "Diagnóstico, manutenção preventiva e corretiva de computadores, com foco em desempenho, estabilidade e resolução ágil de problemas.",
+      "Fluxos de entrega mais seguros e eficientes com versionamento, automação e boas práticas de ciclo de vida de software.",
   },
   {
-    icon: FaBrain,
-    title: "IA & Automação",
+    icon: FaCloud,
+    title: "Cloud & Infraestrutura",
     description:
-      "Utilização de inteligência artificial e ferramentas modernas como auxílio na programação para entregar soluções mais eficientes.",
+      "Acompanhamento de soluções em ambientes modernos com foco em infraestrutura, escalabilidade e operação mais confiável.",
   },
   {
-    icon: FaHeadset,
-    title: "Suporte Técnico",
+    icon: FaShieldAlt,
+    title: "Segurança & Proteção de Dados",
     description:
-      "Experiência em atendimento ao cliente e resolução de problemas técnicos com comunicação clara e efetiva.",
+      "Pensamento crítico para segurança desde a concepção da aplicação, com atenção à proteção de dados e boas práticas de implementação.",
   },
 ];
 
 export const projects = [
   {
-    name: "Projeto 01 - Landing page Desiree (publico)",
+    name: "Landing page Desiree",
     description:
-      "Projeto finalizado e disponível, com acesso liberado",
+      "Projeto finalizado e disponível publicamente, com foco em presença digital e conversão para o público-alvo.",
     techs: ["React", "Vite", "TailwindCSS", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_desiree",
     demo: "https://www.desireehonorio.com.br/",
   },
   {
-    name: "Projeto 02 - Store em Flutter (em breve)",
+    name: "Store em Flutter",
     description:
-      "Projeto em desenvolvimento, com progresso ativo.",
+      "Projeto em desenvolvimento com foco em experiência mobile e arquitetura de aplicação moderna.",
     techs: ["Flutter", "Dart", "Firebase"],
     github: "https://github.com/DiegoNeres99/primeiro-projeto-em-flutter",
     demo: "#",
     comingSoon: true,
-  },  
+  },
   {
-    name: "Projeto 03 - Landing page Silmara (publico)",
+    name: "Landing page Silmara",
     description:
-      "Projeto finalizado e disponível, com acesso liberado.",
+      "Landing page pública e bem estruturada, criada para apresentar serviços com mensagem clara e boa navegação.",
     techs: ["React", "Vite", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_silmara",
     demo: "https://silmaraalmeidaterapia.com.br/",
-    comingSoon: true,
+    comingSoon: false,
   },
   {
-    name: "Projeto 04 - Rastreador veicular em tempo real (publico)",
+    name: "Rastreador veicular em tempo real",
     description:
-      "Projeto em desenvolvimento, com progresso ativo.",
-    techs: ["React", "NestJs", "TypeScript", "WebSocket", "MySQL"],
+      "Sistema com arquitetura moderna para monitoramento, comunicação em tempo real e lógica de rastreio.",
+    techs: ["React", "NestJS", "TypeScript", "WebSocket", "MySQL"],
     github: "https://github.com/DiegoNeres99/projeto_rastreador_veiculo",
     demo: "#",
     comingSoon: true,
   },
   {
-    name: "Projeto 05 - Landing page Dr Adriana (publico)",
+    name: "Landing page Dr. Adriana",
     description:
-      "Projeto finalizado e disponível, com acesso liberado.",
+      "Entrega finalizada para divulgação institucional com visual elegante e foco em apresentação profissional.",
     techs: ["React", "Vite", "JavaScript"],
     github: "https://github.com/DiegoNeres99/site_adriana",
     demo: "https://adrianateodoro.com.br/",
+    comingSoon: false,
+  },
+  {
+    name: "Sistema agendamento para Barbearia",
+    description:
+      "Sistema em desenvolvimento para agendamento de serviços, com painel administrativo e interface amigável para clientes.",
+    techs: ["React", "NestJS", "MySQL", "TailwindCSS"],
+    githubLinks: [
+      { label: "API", url: "https://github.com/DiegoNeres99/sistema_barbearia_api" },
+      { label: "Web", url: "https://github.com/DiegoNeres99/sistema_barbearia_web" },
+    ],
+    demo: "#",
     comingSoon: true,
+    status: "Em desenvolvimento",
   }
 ];
